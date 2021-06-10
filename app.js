@@ -35,13 +35,16 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth=firebase.auth();
 
-
-mongoose.connect("mongodb+srv://ragul123:ragul123@cluster0.i0p5p.mongodb.net/maindb?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-});
+try{
+        mongoose.connect("mongodb+srv://ragul123:ragul123@cluster0.i0p5p.mongodb.net/maindb?retryWrites=true&w=majority", {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false
+    });
+}catch(e){
+    console.log(e);
+}
 
 
 ////////////////////////////////////////////////////////////////////
@@ -314,8 +317,7 @@ app.post('/login',(req,res)=>{
     const {username,password}=req.body;
     auth.signInWithEmailAndPassword(username,password)
     .then((user)=>{
-        //console.log(user);
-        if(user.email=='admin@gmail.com'){
+        if(username=="admin@gmail.com"){
             res.redirect('/admin');
         }
         else{
