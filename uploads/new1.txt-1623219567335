@@ -1,0 +1,36 @@
+from socket import *
+import time
+
+UDP_IP = "127.0.0.1"
+UDP_PORT = 12000
+
+dns = {
+        'www.facebook.com': '69.171.250.35',
+        'www.twitter.com': '104.244.42.193',
+        'www.tumblr.com': '192.0.77.40',
+        'www.google.co.in': '216.58.200.131',
+        'www.google.com': '172.217.166.100',
+        'www.youtube.com': '216.58.200.174',
+        'www.bing.com': '204.79.197.200',
+        'www.amrita.edu': '103.10.24.196'
+    }
+
+serverSocket = socket(AF_INET, SOCK_DGRAM) 
+serverSocket.bind((UDP_IP, UDP_PORT))
+
+print("Server Initializing....")
+time.sleep(1)
+
+
+while True:
+    domainName, clientAddr = serverSocket.recvfrom(1024) 
+    domainName= domainName.decode()
+
+    print("Client Requesting Domain: ", domainName)
+
+    if domainName in dns:
+        serverSocket.sendto(dns[domainName].encode(),clientAddr)
+        print("DNS {} sent successfully!! ".format(dns[domainName]))
+    else:
+        serverSocket.sendto('Error retrieving DNS! Check your input!'.encode(),clientAddr)
+        print("Error retreiving DNS!")
