@@ -700,7 +700,7 @@ app.get('/:assign_id/:course_id/assignment/delete',(req,res)=>{
 
 
 
-app.listen(4000, () => {
+app.listen(process.env.PORT||4000, () => {
     console.log('Serving on port 4000')
 })
 
