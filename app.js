@@ -36,7 +36,7 @@ firebase.initializeApp(firebaseConfig);
 const auth=firebase.auth();
 
 
-mongoose.connect('mongodb://localhost:27017/maindb', {
+mongoose.connect("mongodb+srv://ragul123:ragul123@cluster0.i0p5p.mongodb.net/maindb?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
