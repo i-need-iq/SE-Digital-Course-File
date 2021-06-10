@@ -31,17 +31,17 @@ describe('Digital_Course_File', () => {
     });
 
 
-    it('Should Delete the Added Course', (done) => {
-        let options = {
-            url: `${test_config.baseURL}/admin/course/delete/60c192027fa3834ffc030d63`   
-        };
-        Request.get(options,(err,res)=>{
-            expect(res.statusCode).toBe(200)
-            expect(res.headers).toBeDefined()
-            expect(res.body).toContain('html')
-            done();
-        })
-    });
+    // it('Should Delete the Added Course', (done) => {
+    //     let options = {
+    //         url: `${test_config.baseURL}/admin/course/delete/60c192027fa3834ffc030d63`   
+    //     };
+    //     Request.get(options,(err,res)=>{
+    //         expect(res.statusCode).toBe(200)
+    //         expect(res.headers).toBeDefined()
+    //         expect(res.body).toContain('html')
+    //         done();
+    //     })
+    // });
 
 
 
