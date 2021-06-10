@@ -1,4 +1,22 @@
 {"baseURL":"http://localhost:4000",
     "courseCode":"15CSE101",
     "courseName":"Computer Programming",
-    "course_id":"60c192027fa3834ffc030d62"}
+    "course_id":"60c24586e8992e001264c57e",
+    "courselist": "60c1d714f9184d49302e3d93,60c1d71ff9184d49302e3d94,60c1d70cf9184d49302e3d92",
+    "name":"Gautam",
+    "password":"password",
+    "phone":"7907396606",
+    "user_id":"60c204c89726bb001344479c",
+    "fac_id":"60c204c89726bb001344479c",
+    "file_id":"60c205579726bb001344479f",
+    "assign_id":"60c215fb9726bb00134447a1",
+    "username": "faculty_unit_test@cb.faculty.amrita.edu",
+    "userType":"Teacher",
+    
+    "d_course_id":"60c2566e3f2ecd001256bd71",
+
+    "d_mfile_id":"60c2574b3f2ecd001256bd72",
+
+    "d_assign_id":"60c24749e8992e001264c581",
+    "d_d_course_id":"60c24586e8992e001264c57e"
+}
